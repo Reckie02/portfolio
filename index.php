@@ -1,3 +1,27 @@
+<!-- <?php
+   // Email information
+   $to = "oluochrachel384@gmail.com";
+   $name = $_REQUEST['name'];
+   $email = $_REQUEST['email'];
+   $subject = $_REQUEST['subject'];
+   $message = $_REQUEST['message'];
+   
+   // Set SMTP server settings
+   ini_set("SMTP", "smtp.gmail.com");
+   ini_set("smtp_port", "587");
+   ini_set("sendmail_from", "oluochrachel384@gmail.com");
+   
+   // Set additional SMTP parameters for authentication and encryption
+   $mailParams = "-f oluochrachel384@gmail.com -X/usr/sbin/sendmail -XSTLS";
+   
+   // Send email with STARTTLS encryption
+   if (mail($to, $subject, $message, "From: $email", $mailParams)) {
+       echo "Email Sent!";
+   } else {
+       echo "Failed to send email.";
+   }
+   ?> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -753,7 +777,7 @@
 		</div>
 	</section> -->
 
-	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
 		<div class="container">
 			<div class="row justify-content-center mb-5 pb-3" >
 				<div class="col-md-7 heading-section text-center ftco-animate">
@@ -769,32 +793,31 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Your Name">
+									<input type="text" class="form-control" name ="name" placeholder="Your Name">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Your Email">
+									<input type="text" class="form-control" name ="email" placeholder="Your Email">
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Subject">
+									<input type="text" class="form-control" name ="subject" placeholder="Subject">
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+									<textarea name="message" id="" cols="30" rows="7" class="form-control" name ="message" placeholder="Message"></textarea>
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
-									<input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+									<input type="submit" value="Submit" class="btn btn-primary py-3 px-5" name ="submit"> 
 								</div>
 							</div>
 						</div>
 					</form>
-					
 				</div>
 
 				<div class="col-md-4 d-flex pl-md-5">
